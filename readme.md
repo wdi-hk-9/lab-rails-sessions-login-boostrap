@@ -155,6 +155,6 @@ But once you log in:
 
 ### Resources
 
-- Look to the [solution code](../sessions-logging-in-by-hand-lesson/solution-code) from today's lesson to guide you
+- Look to the [solution code](https://github.com/wdi-hk-9/lesson-rails-sessions-custom-auth/tree/in-class) from today's lesson to guide you
 - [This RailsCast](http://railscasts.com/episodes/250-authentication-from-scratch) on authentication by hand could help, too; note this is an older version!
 - [Hartl's tutorial](https://www.railstutorial.org/book/modeling_users) can always help

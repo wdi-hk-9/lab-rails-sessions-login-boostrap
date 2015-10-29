@@ -1,5 +1,7 @@
 <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %>
 
 <h1> Users index </h1>
-
+  <% @users.each do |user|%>
+   <%= user.email %> |
+  <% end %>
 

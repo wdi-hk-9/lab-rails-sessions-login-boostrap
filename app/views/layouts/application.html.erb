@@ -14,28 +14,38 @@
       </div>
       <div>
         <ul class="nav navbar-nav navbar-left">
-          <li><a href="#">Photos</a></li>
-          <li><a href="#">Users</a></li>
+          <li><%= link_to "Photos", photos_path%></li>
+          <li><%= link_to "Users", users_path%></li>
           <li><a href="#">My Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Please log in</a></li>
+          <% flash.each do |name, message| %>
+             <li class="flash-message flash-message-<%= name %>">
+              <%= message %>
+             </li>
+          <% end %>
+
+          <% if current_user %>
+            <li> hello, <%= current_user.email %> </li>
+            <li> <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+            </li>
+          <% else %>
+            <li><%= link_to 'Please login', login_path %><li>
+          <% end %>
         </ul>
       </div>
     </div>
   </nav>
 
-
-
-  <% flash.each do |name, message| %>
-     <div class="flash-message flash-message-<%= name %>">
-      <%= message %>
-     </div>
-  <% end %>
-
-<%= yield %>
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
+
+
+
+
 
 

@@ -1,7 +1,14 @@
 <h1>Photos#index</h1>
 
-<table id="photo">
-<%= link_to "Add New photo", new_photo_path %>
+<table id="photo" class="table table-hover">
+<button type="button" class="btn btn-warning"><%= link_to "+ NEW", new_photo_path %></button>
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Title</th>
+      <th>User</th>
+    </tr>
+  </thead>
   <tbody>
     <% @photos.each do |photo| %>
       <tr>

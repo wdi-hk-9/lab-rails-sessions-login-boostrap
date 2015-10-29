@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'photos/index'
+
+  get 'photos/show'
+
+  get 'photos/new'
+
+  get 'photos/create'
+
+  get 'photos/update'
+
   get 'secret/public_info'
 
   get 'secret/secret'

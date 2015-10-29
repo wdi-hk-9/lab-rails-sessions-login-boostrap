@@ -1,0 +1,61 @@
+<h1>Photos</h1>
+<!-- <p>Find me in app/views/photos/index.html.erb</p> -->
+<button type="button" class="btn"><%= link_to "+ NEW", new_photo_path %></button>
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Picture</th>
+        <th>Title</th>
+        <th>User Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><img src="<%= photo.picture %>" alt="<%= photo.title %> photo" style="width:200px;height:200px;"></td>
+        <td>photo.name</td>
+        <td>photo.user.name</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table id="photo" class="table table-hover">
+<button type="button" class="btn btn-warning"><%= link_to "+ NEW", new_photo_path %></button>
+  <thead>
+    <tr>
+      <th>Picture</th>
+      <th>Title</th>
+      <th>User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td class="picture">
+          <img src="<%= photo.picture %>" alt="<%= photo.title %> photo" style="width:200px;height:128px;">
+        </td>
+
+        <td><%= photo.title %></td>
+        <td><%= photo.user %></td>
+
+        <td><%= link_to "show", photo_path(photo) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

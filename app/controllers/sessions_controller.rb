@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
  # Authentication logic
  def create
   user = User.find_by_email(params[:email])
-
   # email_found && params[:password] == hashed_password ?
   if user && user.authenticate(params[:password])
     redirect_to root_path, notice: "logged in!"

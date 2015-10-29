@@ -12,7 +12,7 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">Flickr</a>
+        <a class="navbar-brand" href="/">Flickr</a>
       </div>
       <div>
         <ul class="nav navbar-nav navbar-left">
@@ -21,20 +21,20 @@
           <li><a href="#">My Profile</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Please login</a></li>
+          <li><a href="/login">Please login</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <% flash.each do |name, message| %>
-  <div class="flash-message flash-message-<%= name %>">
-    <%= message %>
-    <% end %>
-  </div>
+    <div class="flash-message flash-message-<%= name %>">
+     <%= message %>
+     <% end %>
+    </div>
 
   <%= yield %>
-
+  <footer>&#169 2015</footer>
 
 </body>
 </html>

@@ -1,0 +1,23 @@
+<h1>Photos#index</h1>
+
+<table id="photo">
+<%= link_to "Add New photo", new_photo_path %>
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td class="picture">
+          <img src="<%= photo.picture %>" alt="<%= photo.title %> photo" style="width:200px;height:128px;">
+        </td>
+
+        <td><%= photo.title %></td>
+        <td><%= photo.user %></td>
+
+        <td><%= link_to "show", photo_path(photo) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+
+

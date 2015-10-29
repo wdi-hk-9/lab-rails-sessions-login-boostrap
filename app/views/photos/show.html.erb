@@ -1,0 +1,18 @@
+<h1> Show. html</h1>
+
+<tbody>
+    <tr>
+      <td class="picture">
+        <img src="<%= @photo.picture %>" alt="<%= @photo.title %> photo" style="width:200px;height:128px;">
+      </td>
+
+
+      <td><%= @photo.title %></td>
+
+
+      <td><%= link_to "edit", edit_photo_path%></td>
+      <td><%= link_to "destroy", photo_path, method: :delete, data: {confirm: 'are you sure?'}%></td>
+    </tr>
+</tbody>
+<br>
+<%= link_to 'Back to all Photos', photos_path %>

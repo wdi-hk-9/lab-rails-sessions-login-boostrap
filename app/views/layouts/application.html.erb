@@ -5,12 +5,37 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
-<body>
 
-<div class="container">
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Flickr</a>
+      </div>
+      <div>
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#">Photos</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">My Profile</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Please login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% flash.each do |name, message| %>
+  <div class="flash-message flash-message-<%= name %>">
+    <%= message %>
+    <% end %>
+  </div>
+
   <%= yield %>
-</div>
+
 
 </body>
 </html>
+

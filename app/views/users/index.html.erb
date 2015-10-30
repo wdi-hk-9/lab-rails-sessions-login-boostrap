@@ -1,0 +1,9 @@
+<h1> Users</h1>
+
+  <% @users.each do |user|%>
+   <%= user.name %>
+   <%= user.email %> |
+  <% end %>
+
+<%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %>
+

@@ -1,0 +1,15 @@
+<div class="photos photos-show">
+  <h1>Photo</h1>
+
+  <h2><%= @photo.title.capitalize %></h2>
+
+  <%= image_tag @photo.url %>
+
+  <h3>Url</h3>
+  <p><%= @photo.url %></p>
+
+  <br>
+  <% if current_user %>
+    <%= link_to 'Destroy', user_my_photo_path(@photo.user_id, @photo.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% end %>
+</div>

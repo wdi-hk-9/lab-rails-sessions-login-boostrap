@@ -1,0 +1,26 @@
+<div class="photos photos-index">
+  <h1>Photos</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @photos.each do |photo| %>
+        <tr>
+          <td><%= photo.title %></td>
+          <td><%= image_tag photo.url %></td>
+          <% if current_user %>
+            <td><%= link_to 'Show', user_my_photo_path(@user.id, photo.id) %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>

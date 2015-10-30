@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render partial: '/shared/navbar' %>
 
-<%= yield %>
+  <% flash.each do |name, message| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= message %>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

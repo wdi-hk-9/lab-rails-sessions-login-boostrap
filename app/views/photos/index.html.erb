@@ -1,0 +1,27 @@
+<div class="photos photos-index">
+  <h1>Photos</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @photos.each do |photo| %>
+        <tr>
+          <td><%= photo.title %></td>
+          <td><%= photo.url %></td>
+          <td><%= link_to 'Show', photo_path %></td>
+          <td><%= link_to 'Edit', edit_photo_path %></td>
+          <td><%= link_to 'Destroy', photo_path, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Photo', new_photo_path %>
+</div>

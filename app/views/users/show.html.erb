@@ -1,0 +1,19 @@
+<div class="users users-show">
+  <h1><%= @user.email %></h1>
+
+  <table>
+    <tr>
+      <th>Picture</th>
+      <th>Title</th>
+      <th>User</th>
+    </tr>
+
+    <% @user.photo.each do |user, photo| %>
+      <tr>
+        <td><%= image_tag photo.url %></td>
+        <td><%= user.photo.title %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

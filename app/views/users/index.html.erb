@@ -1,0 +1,10 @@
+<div class="users users-index">
+  <h1>Users index</h1>
+    <% @users.each do |user| %>
+      <%= user.email %>
+      <%= user.password_digest %>
+    <% end %>
+
+    <br>
+    <%= link_to 'Add New User', new_user_path %>
+</div>

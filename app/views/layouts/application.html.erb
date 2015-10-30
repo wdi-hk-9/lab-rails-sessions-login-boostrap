@@ -15,14 +15,6 @@
     </div>
   <% end %>
 
-  <% if current_user %>
-    <p>Hello, <%= current_user.email %> </p>
-    <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: 'Are you sure?'} %>
-  <% else %>
-    <%= link_to 'Please login', login_path %>
-    <%= link_to 'Sign up', new_user_path %>
-  <% end %>
-
   <div class="container">
     <%= yield %>
   </div>

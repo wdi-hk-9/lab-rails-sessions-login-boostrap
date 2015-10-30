@@ -1,7 +1,7 @@
 <div class="photos photos-edit">
   <h1>Edit Photo</h1>
 
-  <%= render 'form' %>
+  <%= render 'form', path: user_my_photos_path(1) %>
 
-  <%= link_to 'Show', photo_path %>
+  <%= link_to 'Show', user_my_photo_path(@user, @photo.id) %>
 </div>

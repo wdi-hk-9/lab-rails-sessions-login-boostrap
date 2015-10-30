@@ -1,18 +1,19 @@
 <div class="users users-show">
   <h1><%= @user.email %></h1>
+  <%= button_to 'New', new_user_my_photo_path(@user.id) %>
 
   <table>
     <tr>
       <th>Picture</th>
       <th>Title</th>
-      <th>User</th>
+      <th>URL</th>
     </tr>
 
-    <% @user.photo.each do |user, photo| %>
+    <% @photos.each do |photo| %>
       <tr>
         <td><%= image_tag photo.url %></td>
-        <td><%= user.photo.title %></td>
-        <td><%= user.email %></td>
+        <td><%= photo.title %></td>
+        <td><%= photo.url %></td>
       </tr>
     <% end %>
   </table>

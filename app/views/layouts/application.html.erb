@@ -8,7 +8,50 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Flickr</a>
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Photos", photos_path  %></li>
+          <li><%= link_to "Users", users_path  %></li>
+          <li><%= link_to "My Profile", users_path  %></li>
+          <%- if current_user %>
+            <li><%= link_to "Add a new picture", new_photo_path %></li>
+          <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <% if current_user %>
+
+             <li><a href="#"> hello, <%= current_user.email %> </a></li>
+             <li><%= link_to 'Logout', session_path(session), method: :delete, data: {confirm: "Are you sure?"} %></li>
+            <% else %>
+             <li><%= link_to 'Signup', new_user_path %></li>
+             <li><%= link_to 'Login', login_path %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <%= flash[:error] %>
+        <%= yield %>
+      </div>
+    </div><!--/row-->
+
+    <footer>
+      <p>&copy; Flickr 2015</p>
+    </footer>
+
+  </div> <!-- /container -->
 
 </body>
 </html>
